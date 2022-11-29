@@ -15,4 +15,5 @@ public class Constants {
     public static final String DEFAULT_URL = getValueFromJSON(PATH_TO_CONFIG_DATA, "defaultUrl");
     public static final int NUMBER_OF_ROWS = Integer.parseInt(getValueFromJSON(PATH_TO_CONFIG_DATA, "numberOfRowsInTable"));
     public static final int NUMBER_OF_COLUMNS = Integer.parseInt(getValueFromJSON(PATH_TO_CONFIG_DATA, "numberOfColumnsInTable"));
+    public static final int USER_NUMBER = Integer.parseInt(getValueFromJSON(PATH_TO_CONFIG_DATA, "numberOfUserToChoose"));
 }

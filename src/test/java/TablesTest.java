@@ -10,6 +10,7 @@ import java.util.List;
 
 import static browser.Browser.goToStartUrl;
 import static utils.Constants.USERS_FILE;
+import static utils.Constants.USER_NUMBER;
 import static utils.JSONUtils.getObjectsFromJSON;
 
 public class TablesTest extends BaseTest{
@@ -32,16 +33,17 @@ public class TablesTest extends BaseTest{
         Assert.assertTrue(registrationForm.isFormOpen(), "Registration form is not open");
 
         List<UserModel> users = getObjectsFromJSON(USERS_FILE, UserModel.class);
-        registrationForm.fillTheRegistrationField(users.get(0));
+        UserModel userToWork = users.get(USER_NUMBER);
+        registrationForm.fillTheRegistrationField(userToWork);
         registrationForm.clickSubmitBtn();
         Assert.assertTrue(registrationForm.isFormClosed());
 
         List<UserModel> usersFromPage = webTablesPage.getValuesFromTable();
-        Assert.assertTrue(usersFromPage.contains(users.get(0)), "User is not present in the table");
+        Assert.assertTrue(usersFromPage.contains(userToWork), "User is not present in the table");
 
-        int entryIndex = webTablesPage.getIndexOfEqualUser(usersFromPage, users.get(0)) + 1;
+        int entryIndex = webTablesPage.getIndexOfEqualUser(usersFromPage, userToWork) + 1;
         webTablesPage.clickDeleteEntry(entryIndex);
         List<UserModel> refreshedUsersFromPage = webTablesPage.getValuesFromTable();
-        Assert.assertFalse(refreshedUsersFromPage.contains(users.get(0)), "User is still present in the table");
+        Assert.assertFalse(refreshedUsersFromPage.contains(userToWork), "User is still present in the table");
     }
 }
