@@ -1,17 +1,27 @@
 package browser;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import utils.LoggerUtils;
 
 import static browser.DriverFactory.defineDriver;
 import static browser.DriverSingleton.stopDriver;
-import static utils.Constants.*;
-import static utils.JSONUtils.getValueFromJSON;
+import static utils.Constants.CURRENT_BROWSER;
+import static utils.Constants.DEFAULT_URL;
+import static utils.WaitingUtils.waitForPresence;
+import static utils.WaitingUtils.waitForVisibility;
 
 public class Browser {
     private static WebDriver driver;
 
     public static void startBrowser() {
         driver = defineDriver(CURRENT_BROWSER).getDriverInstance();
+        driver.manage().window().maximize();
+    }
+
+    public static void maximizeBrowser() {
         driver.manage().window().maximize();
     }
 
@@ -27,14 +37,13 @@ public class Browser {
         driver.get(DEFAULT_URL);
     }
 
-//    public static WebDriver getDriver() {
-//        return driver;
-//    }
-//
-//
-//
-//    public void goToStartUrl() {
-////        LoggerUtil.infoLog("INFO: opening the first page");
-//        driver.get(getValueFromJSON(PATH_TO_TEST_DATA, "defaultUrl"));
-//    }
+    public static void scrollViaJS(By locator) {
+        LoggerUtils.infoLog("Scrolling to the visibility of locator");
+        waitForPresence(locator);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", driver.findElement(locator));
+        waitForVisibility(locator);
+    }
+
+
 }

@@ -9,7 +9,7 @@ import static utils.Constants.FIREFOX_SETTINGS;
 import static utils.JSONUtils.getValueFromJSON;
 
 public class FirefoxCapabilities extends DriverSingleton {
-static FirefoxOptions options = new FirefoxOptions();
+    static FirefoxOptions options = new FirefoxOptions();
 
     @Override
     public WebDriver startDriver() {

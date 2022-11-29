@@ -1,0 +1,7 @@
+{
+  "currentBrowser": "chrome",
+  "defaultUrl": "https://demoqa.com/",
+  "explicitWaitingTimeout": 10,
+  "alertsWaitingTimeout": 2,
+  "randomStringLength": 10
+}

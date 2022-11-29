@@ -9,6 +9,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 
+import static utils.LoggerUtils.errorLog;
+
 public class JSONUtils {
     private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
 
@@ -19,12 +21,14 @@ public class JSONUtils {
         try {
             data = Files.readString(path);
         } catch (IOException e) {
+            errorLog("Cannot locate file. Check path");
             throw new RuntimeException(e);
         }
         TypeReference<HashMap<String, String>> typeReference = new TypeReference<>() {};
         try {
             return JSON_MAPPER.readValue(data, typeReference);
         } catch (JsonProcessingException e) {
+            errorLog("Cannot process data");
             throw new RuntimeException(e);
         }
     }
