@@ -1,4 +1,4 @@
-package forms.pages.frames_pack;
+package forms.pages.frames_pages_pack;
 
 import forms.LeftMenuForm;
 import forms.base.BaseForm;

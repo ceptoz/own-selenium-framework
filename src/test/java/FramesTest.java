@@ -1,6 +1,6 @@
 import forms.pages.AlertsFramesWindowsWrapPage;
-import forms.pages.frames_pack.FramesPage;
-import forms.pages.frames_pack.NestedFramesPage;
+import forms.pages.frames_pages_pack.FramesPage;
+import forms.pages.frames_pages_pack.NestedFramesPage;
 import forms.pages.StartPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;

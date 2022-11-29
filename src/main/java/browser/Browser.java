@@ -3,7 +3,7 @@ package browser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import utils.LoggerUtils;
 
 import static browser.DriverFactory.defineDriver;
@@ -18,10 +18,6 @@ public class Browser {
 
     public static void startBrowser() {
         driver = defineDriver(CURRENT_BROWSER).getDriverInstance();
-        driver.manage().window().maximize();
-    }
-
-    public static void maximizeBrowser() {
         driver.manage().window().maximize();
     }
 
@@ -45,5 +41,9 @@ public class Browser {
         waitForVisibility(locator);
     }
 
-
+    public static void clickViaJS(By locator) {
+        waitForVisibility(locator);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", driver.findElement(locator));
+    }
 }

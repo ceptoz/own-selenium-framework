@@ -1,4 +1,4 @@
-package forms.pages.frames_pack;
+package forms.pages.frames_pages_pack;
 
 import forms.base.BaseForm;
 import forms.base.Label;

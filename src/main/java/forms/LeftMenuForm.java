@@ -4,7 +4,7 @@ import forms.base.BaseForm;
 import forms.base.Button;
 import org.openqa.selenium.By;
 
-import static browser.Browser.scrollViaJS;
+import static browser.Browser.*;
 
 public class LeftMenuForm extends BaseForm {
     By alertSubTabLocator = By.xpath("//li//span[text()='Alerts']");
@@ -12,7 +12,6 @@ public class LeftMenuForm extends BaseForm {
     By framesSubTabLocator = By.xpath("//li//span[text()='Frames']");
     Button framesSubTabBtn = new Button(framesSubTabLocator, "Frames subtab");
     By nestedFramesTabLocator = By.xpath("//li//span[text()='Nested Frames']");
-    Button nestedFramesTabBtn = new Button(nestedFramesTabLocator, "Nested frames sub tab");
     By webTablesTabLocator = By.xpath("//li//span[text()='Web Tables']");
     Button webTablesSubTab = new Button(webTablesTabLocator, "Web tables sub tab");
     By browserWindowsLocator = By.xpath("//li//span[text()='Browser Windows']");
@@ -43,7 +42,7 @@ public class LeftMenuForm extends BaseForm {
 
     public void clickNestedFramesSubTab() {
         scrollViaJS(nestedFramesTabLocator);
-        nestedFramesTabBtn.click();
+        clickViaJS(nestedFramesTabLocator);
     }
 
     public void clickWebTablesTab() {

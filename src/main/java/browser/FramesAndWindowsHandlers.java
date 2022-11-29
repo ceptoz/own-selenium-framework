@@ -22,7 +22,7 @@ public class FramesAndWindowsHandlers extends Browser{
     }
 
     public static void switchToNewTab(String thisWindow) {
-        LoggerUtils.infoLog("INFO: Switching to other tab.");
+        LoggerUtils.infoLog("Switching to other tab.");
         for (String window : getDriver().getWindowHandles()) {
             if(!thisWindow.contentEquals(window)) {
                 getDriver().switchTo().window(window);
@@ -38,7 +38,7 @@ public class FramesAndWindowsHandlers extends Browser{
     }
 
     public static void goToWindow(String windowID) {
-        LoggerUtils.infoLog("INFO: Switching to the specified tab.");
+        LoggerUtils.infoLog("Switching to the specified tab.");
         getDriver().switchTo().window(windowID);
     }
 }

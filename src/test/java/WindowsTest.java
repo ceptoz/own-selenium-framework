@@ -1,8 +1,8 @@
 import forms.pages.AlertsFramesWindowsWrapPage;
 import forms.pages.StartPage;
-import forms.pages.windows_pack.LinksPage;
-import forms.pages.windows_pack.SamplePage;
-import forms.pages.windows_pack.WindowsPage;
+import forms.pages.windows_pages_pack.LinksPage;
+import forms.pages.windows_pages_pack.SamplePage;
+import forms.pages.windows_pages_pack.WindowsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -46,5 +46,7 @@ public class WindowsTest extends BaseTest{
 
         goToWindow(linksPageHandle);
         Assert.assertTrue(linksPage.isFormOpen(), "Links page is not open");
+
+
     }
 }

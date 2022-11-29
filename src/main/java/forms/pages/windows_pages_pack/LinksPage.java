@@ -1,4 +1,4 @@
-package forms.pages.windows_pack;
+package forms.pages.windows_pages_pack;
 
 import forms.base.BaseForm;
 import forms.base.Button;

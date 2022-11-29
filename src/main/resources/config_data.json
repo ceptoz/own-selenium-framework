@@ -3,5 +3,8 @@
   "defaultUrl": "https://demoqa.com/",
   "explicitWaitingTimeout": 10,
   "alertsWaitingTimeout": 2,
-  "randomStringLength": 10
+  "randomStringLength": 10,
+  "numberOfUserToChoose": 0,
+  "numberOfRowsInTable": 10,
+  "numberOfColumnsInTable": 6
 }
