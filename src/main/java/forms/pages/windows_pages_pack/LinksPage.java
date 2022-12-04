@@ -1,5 +1,6 @@
 package forms.pages.windows_pages_pack;
 
+import browser.Browser;
 import forms.base.BaseForm;
 import forms.base.Button;
 import org.openqa.selenium.By;
@@ -13,6 +14,7 @@ public class LinksPage extends BaseForm {
     }
 
     public void homeButtonClick() {
+        Browser.scrollViaJS(homeButtonLocator);
         homeButton.click();
     }
 

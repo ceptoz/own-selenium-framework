@@ -36,7 +36,7 @@ public class TablesTest extends BaseTest{
         UserModel userToWork = users.get(USER_NUMBER);
         registrationForm.fillTheRegistrationField(userToWork);
         registrationForm.clickSubmitBtn();
-        Assert.assertTrue(registrationForm.isFormClosed());
+        Assert.assertTrue(registrationForm.isFormClosed(), "Registration form is still open");
 
         List<UserModel> usersFromPage = webTablesPage.getValuesFromTable();
         Assert.assertTrue(usersFromPage.contains(userToWork), "User is not present in the table");
