@@ -1,5 +1,4 @@
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import static browser.Browser.closeBrowser;
 import static browser.Browser.startBrowser;
